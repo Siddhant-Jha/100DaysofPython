@@ -10,6 +10,11 @@ print('Hello World! with single quotes')        #Instead of using " " we can als
 print("Hello World!\nHello World! second time\nHello World third time")     #We use \n flag to indicate a newline character
 
 
+#Printing nth character of a string made easy
+#We can now easily print any character from a string using the method mentioned below
+print("Hello Appi!"[6])                         #We can right the index we want to catch from the string and python will automatically print that for us
+
+
 #Printing number but with equal gaps(tabs) inbetween
 print("1\t2\t3\t4\t5")      #We make use of \t flag to denote a tab in the print function
 print("6\t7\t8\t9\t10")
