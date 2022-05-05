@@ -1,3 +1,5 @@
+#DAY 2: Final Project
+
 #WAP to calculate tip over a bill amount and split it into all the peoples dining in
 
 
