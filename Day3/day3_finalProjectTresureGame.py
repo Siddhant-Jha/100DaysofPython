@@ -1,3 +1,4 @@
+#DAY 3: FINAL PROJECT
 #WAP to create a treasure hunting game
 
 #Welcome prompt for the user
