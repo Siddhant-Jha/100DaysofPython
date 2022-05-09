@@ -1,3 +1,4 @@
+#DAY 4 second project
 #WAP to creaker a Banker Roulette app that takes names of persons and randomly chooses the person who is going to pay the bill
 
 #Importing the random moudule for using randint function
