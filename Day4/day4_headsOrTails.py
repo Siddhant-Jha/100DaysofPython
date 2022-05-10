@@ -1,4 +1,4 @@
-#DAY4: Not completed
+#DAY4: Completed on 09/05
 #WAP to simulate a coin toss incorporating the use of random module
 #0 is a Head and 1 is a Tail
 
