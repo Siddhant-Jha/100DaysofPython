@@ -1,3 +1,5 @@
+#DAY 5: Final Project
+
 #WAP to generate a random password using the paranmeter's shared by the user
 
 #Importing the random module
