@@ -1,5 +1,3 @@
-#DAY 5: Final Project
-
 #WAP to generate a random password using the paranmeter's shared by the user
 
 #Importing the random module
@@ -46,5 +44,5 @@ for character in password:
     finalPassword += character
 
 
-#Printing out the final password
+#Printing out the final password    
 print(finalPassword)
