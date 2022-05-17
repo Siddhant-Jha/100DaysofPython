@@ -1,3 +1,5 @@
+#DAY 9 Final Project
+
 #WAP to host a Silent Auction to depict the use of dictonaries
 
 #Fucntion to compare the values of bidding amount
