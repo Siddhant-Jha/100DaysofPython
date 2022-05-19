@@ -1,3 +1,5 @@
+#DAY 10 Final Project
+
 #WAP to create a calculator
 
 #Defining functions for each individual operation
