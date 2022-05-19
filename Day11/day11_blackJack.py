@@ -14,81 +14,77 @@ print("""
 
 """)
 
-#Defining the deck of cards Where all the face card's value 10 and ACE may be valued as a 11 or a 1 depending upon the situation
 
-deckOfCards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
-
-#Function to add another card to user's deck
-def addAnotherCardForUser():
-    listOfUserCards.append(choice(deckOfCards))
-
-def addAnotherCardForComputer():
-    listOfComputerCards.append(choice(deckOfCards))
+def drawCards():
+    deckOfCards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+    drawnCard = choice(deckOfCards)
+    return drawnCard
 
 
-#Providing user and computer with two cards each
+def calculateScore (listofCards):
 
-listOfUserCards = []
-listOfComputerCards = []
-sumOfUsersCard = 0
-sumOfComputersCard = 0
-
-for card in range(2):
-    listOfUserCards.append(choice(deckOfCards))
-    listOfComputerCards.append(choice(deckOfCards))
-
-for card in range(len(listOfUserCards)):
-    sumOfUsersCard += listOfUserCards[card]
-
-for card in range(len(listOfComputerCards)):
-    sumOfComputersCard += listOfComputerCards[card]
+    if sum(listofCards) == 21 and len(listofCards) == 21:
+        return 0
+    
+    if sum(listofCards) > 21 and 11 in listofCards:
+        listofCards.remove(11)
+        listofCards.append(1)
+    
+    return sum(listofCards)
 
 
-if (11 in listOfUserCards) and (10 in listOfUserCards):
-    print("User Win's")
-elif (11 in listOfComputerCards) and (10 in listOfComputerCards):
-    print("Computer Win's")
-else:
-    if sumOfUsersCard > 21:
-        if 11 in listOfUserCards:
-            indexofAce = listOfUserCards.index(11)
-            listOfUserCards[indexofAce] = 1
-
-            if sumOfUsersCard > 21:
-                print("You Lost")
-            else:
-                drawAnotherCard = input("Do you want to draw another card?\n Type 'Y' for Yes and 'N' for No: \t").lower()
-
-                if drawAnotherCard == 'y':
-                    addAnotherCardForUser
-                else:
-                    if sumOfComputersCard < 17:
-                        addAnotherCardForComputer
-                    else:
-                        if sumOfComputersCard > 21:
-                            print("Computer's Total is above 21 so You Win")
-                        else:
-                            if sumOfUsersCard > sumOfComputersCard:
-                                print("Your Total is greater than Computer's total, You Win")
-                            elif sumOfUsersCard == sumOfComputersCard:
-                                print("Your Total score is equal to computer's score it's a Draw")
-                            else:
-                                 print("Your total is smaller than computer's total, You Lose")
-            
-        else:
-            print("You Lost")
-
+def comparingCards (sumOfComputersCard, sumOfUsersCard):
+    if sumOfComputersCard == sumOfUsersCard:
+        print("It's a Draw")
+    elif sumOfComputersCard == 0:
+        print("Computer has a black jack Computer Wins")
+    elif sumOfUsersCard == 0:
+        print("User have a black jack, User Wins")
+    elif sumOfUsersCard > 21:
+        print("Sum of User's card is higher than 21 You Loose")
+    elif sumOfComputersCard > 21:
+        print("Sum of Computer's card is higer than 21 You Win")
+    elif sumOfUsersCard > sumOfComputersCard:
+        print("You Win")
     else:
-        drawAnotherCard = input("Do you want to draw another card? \n Type 'Y' for Yes or 'N' for NO")
-        if drawAnotherCard == 'y':
-            addAnotherCardForUser
-        
+        print("You Loose")
+
+
+def playBlackJack():
+
+    listOfUserCards = []
+    listOfComputerCards = []
+    gameOver = False
+
+    for i in range(2):
+        listOfUserCards.append(drawCards)
+        listOfComputerCards.append(drawCards)
+
+
+    while gameOver == False:
+
+        sumOfUsersCard = calculateScore(listofCards=listOfUserCards)
+        sumOfComputersCard = calculateScore(listofCards=listOfComputerCards)
+
+
+        if sumOfUsersCard == 0 or sumOfComputersCard == 0 or sumOfUsersCard > 21:
+            gameOver = True
+
         else:
-            pass
+            drawAnotherCard = input("Do you want to draw and card?\n Type 'Y' for Yes or 'N' for No").lower()
 
-print(listOfUserCards)
-print(sumOfUsersCard)
+            if drawAnotherCard == "y":
+                listOfUserCards.append(drawCards)
+            else:
+                gameOver = True
 
-print(listOfComputerCards)
-print(sumOfComputersCard)
 
+    while sumOfComputersCard != 0 and sumOfComputersCard < 17:
+        listOfComputerCards.append(drawCards)
+        sumOfComputersCard = calculateScore(listofCards=listOfComputerCards)
+
+
+    print(comparingCards(sumOfUsersCard=sumOfUsersCard, sumOfComputersCard=sumOfComputersCard))
+
+while(input("Do You want to play Black Jack\nType 'Y' for Yes and 'N' for No").lower() == 'y'):
+    playBlackJack()
