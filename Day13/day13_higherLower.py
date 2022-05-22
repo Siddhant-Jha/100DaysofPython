@@ -1,3 +1,6 @@
+#DAY 13 Final Project: Minute Details left
+
+
 #WAP to play the game of higer or lower
 #A game where you have to guess than from the above mentioned celebrities have more followers
 #If you are right the game will continue but if you are wrong, Program will stop and display your score
