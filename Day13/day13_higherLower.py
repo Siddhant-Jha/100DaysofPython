@@ -6,7 +6,7 @@
 #If you are right the game will continue but if you are wrong, Program will stop and display your score
 #When you are right B become A
 
-#importing the choice function from random module, and game data
+#importing the choice function and gamedata from random module and prebuilt file.
 from random import choice
 from day13_gameData import data
 
