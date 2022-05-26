@@ -69,8 +69,6 @@ def resourceChecker(userWant):
             print("Sorry therer is not enough resources left\n")
             return False
 
-#TODO 1: Even though the resources are not enough, coffe is still being made, STOP IT
-
 #Function to calculate coins
 
 def coinCalculator(userWant):
