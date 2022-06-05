@@ -1,32 +1,35 @@
 #MY AWESOME SNAKE GAME
 
 from turtle import Turtle, Screen
+from time import sleep
+from day19_snakeClass import CreateSnake
 
 #Setting Up the screen
 screen = Screen()
 screen.setup(width=500, height=500)
 screen.bgcolor("black")
 screen.title("My Awesome Snake Game")
-
-
-#Setting up three turtles simultaneously
-
-startingPosition = [(0,0),(-20,0),(-40,0)]
-
-for postion in startingPosition:
-    snakeSegment = Turtle('square')
-    snakeSegment.color('white')
-    snakeSegment.goto(postion)
+screen.tracer(0)
+screen.listen()
 
 
 
-# #Function to move the turtles
-# def moveForward():
-#     turtleOne.forward(50)
-#     turtleTwo.forward(50)
-#     turtleThree.forward(50)
+snake = CreateSnake()
 
-# screen.onkey(key='W', fun=moveForward)
+screen.onkeypress(key='Up', fun=snake.up())
+screen.onkeypress(key='Down', fun=snake.down())
+screen.onkeypress(key='Left', fun=snake.left())
+screen.onkeypress(key='Right', fun=snake.right())
+
+#creatting a snake
+snake.createSnake()
+
+gameOnn = True
+
+while gameOnn:
+    screen.update()
+    sleep(0.1)
+    snake.moveSnake()
 
 
 screen.exitonclick()
