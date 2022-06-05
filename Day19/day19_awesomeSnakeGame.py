@@ -13,15 +13,16 @@ screen.tracer(0)
 screen.listen()
 
 
-
 snake = CreateSnake()
+
 
 screen.onkeypress(key='Up', fun=snake.up())
 screen.onkeypress(key='Down', fun=snake.down())
 screen.onkeypress(key='Left', fun=snake.left())
 screen.onkeypress(key='Right', fun=snake.right())
 
-#creatting a snake
+
+#Creating a snake
 snake.createSnake()
 
 gameOnn = True
