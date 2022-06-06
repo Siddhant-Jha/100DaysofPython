@@ -1,4 +1,5 @@
 #MY AWESOME SNAKE GAME
+#Didn't do anything today 06/06 Totally fuckedup day
 
 from turtle import Turtle, Screen
 from time import sleep
