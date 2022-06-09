@@ -1,5 +1,4 @@
 #MY AWESOME SNAKE GAME
-#Struk at day 19 🥲
 
 from turtle import Turtle, Screen
 from time import sleep
