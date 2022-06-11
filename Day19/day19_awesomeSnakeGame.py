@@ -1,5 +1,4 @@
 #MY AWESOME SNAKE GAME
-#Still Struck
 
 from turtle import Turtle, Screen
 from time import sleep
