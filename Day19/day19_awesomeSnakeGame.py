@@ -1,6 +1,7 @@
 #MY AWESOME SNAKE GAME
 #🥲🥲🥲🥲🥲🥲
 #🥲🥲🥲🥲🥲🥲
+#🥲🥲🥲🥲🥲🥲
 
 from turtle import Turtle, Screen
 from time import sleep
