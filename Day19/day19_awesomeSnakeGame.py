@@ -3,7 +3,8 @@
 #🥲🥲🥲🥲🥲🥲
 #🥲🥲🥲🥲🥲🥲
 #🥲🥲🥲🥲🥲🥲
-#🥲🥲🥲🥲🥲🥹
+#🥲🥲🥲🥲🥲🥲
+#🥲🥲🥲🥲🥲🥲
 
 from turtle import Turtle, Screen
 from time import sleep
