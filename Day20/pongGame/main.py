@@ -1,6 +1,8 @@
+from time import sleep, time
 from turtle import Screen, Turtle, goto, ycor
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.bgcolor("black")
@@ -36,9 +38,12 @@ screen.onkey(rPaddle.goDown, "Down")
 screen.onkey(lPaddle.goUp, "w")
 screen.onkey(lPaddle.goDown, "s")
 
+scoreboard = Scoreboard()
+
 
 gameOn = True
 while gameOn:
+    sleep(ball.ballMoveSpeed)
     screen.update()
     ball.move()
 
@@ -54,8 +59,10 @@ while gameOn:
 
     if ball.xcor() > 380:
         ball.backToSquareOne()
+        scoreboard.lPoint()
 
     if ball.xcor < -380:
         ball.backToSquareOne()
+        scoreboard.rPoint()
 
 screen.exitonclick()
